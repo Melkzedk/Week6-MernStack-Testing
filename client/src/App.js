@@ -92,7 +92,7 @@ function App() {
 
         {/* Footer */}
         <footer className="bg-dark text-white text-center py-3 mt-auto">
-          <small>© {new Date().getFullYear()} Bug Tracker</small>
+          <small>© {new Date().getFullYear()} Bug Track</small>
         </footer>
       </div>
     </ErrorBoundary>
