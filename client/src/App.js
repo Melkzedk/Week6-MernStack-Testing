@@ -78,7 +78,7 @@ function App() {
             <div className="col-md-8 col-lg-6">
               <BugForm onCreate={handleCreate} />
 
-              {loading && <div className="alert alert-info mt-3">Loading...</div>}
+              {loading && <div className="alert alert-info mt-3">Loading.....</div>}
               {error && <div className="alert alert-danger mt-3">{error}</div>}
 
               <BugList
