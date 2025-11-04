@@ -26,7 +26,7 @@ Debugging Tools: Chrome DevTools, Node.js Inspector, Console Logs
 
 ⚙️ Setup Instructions
 1. Clone the Repository
-git clone https://github.com/your-username/mern-bug-tracker.git
+git clone https://github.com/Melkzedk/Week6-MernStack-Testing.git
 cd mern-bug-tracker
 
 2. Set Up the Server
