@@ -3,6 +3,7 @@ import API from './api';
 import BugForm from './components/BugForm';
 import BugList from './components/BugList';
 import ErrorBoundary from './components/ErrorBoundary';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
@@ -30,7 +31,6 @@ function App() {
   const handleCreate = async (payload) => {
     try {
       const res = await API.createBug(payload);
-      // Add new bug at the top of the list
       setBugs((prev) => [res.data, ...prev]);
     } catch (err) {
       console.error(err);
@@ -62,19 +62,38 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <div className="App">
-        <header className="App-header">
-          <h1>🐞 Bug Tracker</h1>
-        </header>
+      <div className="App bg-light min-vh-100 d-flex flex-column">
+        {/* Header */}
+        <nav className="navbar navbar-dark bg-dark mb-4 shadow">
+          <div className="container">
+            <span className="navbar-brand mx-auto fs-4">
+              🐞 <strong>Bug Tracker</strong>
+            </span>
+          </div>
+        </nav>
 
-        <main style={{ maxWidth: '600px', margin: 'auto' }}>
-          <BugForm onCreate={handleCreate} />
+        {/* Main Content */}
+        <main className="container flex-grow-1">
+          <div className="row justify-content-center">
+            <div className="col-md-8 col-lg-6">
+              <BugForm onCreate={handleCreate} />
 
-          {loading && <p>Loading...</p>}
-          {error && <p style={{ color: 'red' }}>{error}</p>}
+              {loading && <div className="alert alert-info mt-3">Loading...</div>}
+              {error && <div className="alert alert-danger mt-3">{error}</div>}
 
-          <BugList bugs={bugs} onUpdate={handleUpdate} onDelete={handleDelete} />
+              <BugList
+                bugs={bugs}
+                onUpdate={handleUpdate}
+                onDelete={handleDelete}
+              />
+            </div>
+          </div>
         </main>
+
+        {/* Footer */}
+        <footer className="bg-dark text-white text-center py-3 mt-auto">
+          <small>© {new Date().getFullYear()} Bug Tracker</small>
+        </footer>
       </div>
     </ErrorBoundary>
   );
