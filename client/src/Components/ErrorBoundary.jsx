@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -6,7 +7,7 @@ export default class ErrorBoundary extends React.Component {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
@@ -16,7 +17,11 @@ export default class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <div>Something went wrong.</div>;
+      return (
+        <div className="alert alert-danger mt-3" role="alert">
+          Something went wrong. Please try refreshing the page.
+        </div>
+      );
     }
 
     return this.props.children;

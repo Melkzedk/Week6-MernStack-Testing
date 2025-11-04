@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function BugItem({ bug, onUpdate, onDelete }) {
   const toggleResolved = () => {
@@ -7,24 +8,27 @@ export default function BugItem({ bug, onUpdate, onDelete }) {
   };
 
   return (
-    <li
-      style={{
-        border: '1px solid #ccc',
-        margin: '8px 0',
-        padding: '8px',
-        borderRadius: '8px',
-        listStyle: 'none',
-      }}
-    >
-      <h4>{bug.title}</h4>
-      <p>{bug.description}</p>
-      <small>Status: {bug.status}</small>
+    <li className="list-group-item d-flex flex-column gap-2">
+      <div className="d-flex justify-content-between align-items-center">
+        <h5 className={bug.status === 'resolved' ? 'text-success' : ''}>{bug.title}</h5>
+        <span className={`badge ${bug.status === 'resolved' ? 'bg-success' : 'bg-warning text-dark'}`}>
+          {bug.status}
+        </span>
+      </div>
 
-      <div style={{ marginTop: '8px' }}>
-        <button onClick={toggleResolved} style={{ marginRight: '8px' }}>
+      <p className="mb-2">{bug.description}</p>
+
+      <div className="d-flex gap-2">
+        <button
+          className={`btn btn-sm ${bug.status === 'resolved' ? 'btn-secondary' : 'btn-success'}`}
+          onClick={toggleResolved}
+        >
           {bug.status === 'resolved' ? 'Reopen' : 'Mark Resolved'}
         </button>
-        <button onClick={() => onDelete(bug._id)} style={{ color: 'red' }}>
+        <button
+          className="btn btn-sm btn-outline-danger"
+          onClick={() => onDelete(bug._id)}
+        >
           Delete
         </button>
       </div>
