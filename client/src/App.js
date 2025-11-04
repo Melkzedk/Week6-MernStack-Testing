@@ -56,7 +56,7 @@ function App() {
       setBugs((prev) => prev.filter((bug) => bug._id !== id));
     } catch (err) {
       console.error(err);
-      setError('Failed to delete bug!');
+      setError('Failed to delete bug');
     }
   };
 
