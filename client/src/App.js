@@ -67,7 +67,7 @@ function App() {
         <nav className="navbar navbar-dark bg-dark mb-4 shadow">
           <div className="container">
             <span className="navbar-brand mx-auto fs-4">
-              🐞 <strong>Bug Tracker</strong>
+              🐞 <strong>Bug Tracker!!</strong>
             </span>
           </div>
         </nav>
