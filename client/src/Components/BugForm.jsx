@@ -58,7 +58,7 @@ export default function BugForm({ onCreate }) {
       {error && <div className="alert alert-danger">{error}</div>}
 
       <button type="submit" className="btn btn-primary w-100">
-        Report Bug
+        Report Bug!
       </button>
     </form>
   );
