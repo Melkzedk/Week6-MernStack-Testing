@@ -7,7 +7,7 @@ export default function BugForm({ onCreate }) {
   const [error, setError] = useState(null);
 
   const validate = () => {
-    if (!title.trim()) return false; // TODO: INTENTIONAL_BUG - returns false but no feedback message for user
+    if (!title.trim()) return false;
     return true;
   };
 
