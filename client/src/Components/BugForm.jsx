@@ -50,7 +50,7 @@ export default function BugForm({ onCreate }) {
           className="form-control"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Describe the issue."
+          placeholder="Describe the issue..."
           rows="3"
         />
       </div>
