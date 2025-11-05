@@ -10,6 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.post('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 app.use('/api/bugs', bugsRouter);
 
