@@ -14,6 +14,10 @@ app.use(express.json());
 app.use('/api/bugs', bugsRouter);
 
 
+app.get('/', (req, res) => {
+res.send('Bug Tracker API is running');
+});
+
 // error handling middleware
 app.use(errorHandler);
 
