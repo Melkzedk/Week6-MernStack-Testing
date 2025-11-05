@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/api/bugs', bugsRouter);
 
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
 res.send('Bug Tracker API is running!');
 });
 
