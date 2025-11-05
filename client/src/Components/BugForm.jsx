@@ -40,7 +40,7 @@ export default function BugForm({ onCreate }) {
           className="form-control"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Enter bug title"
+          placeholder="Enter bug title."
         />
       </div>
 
