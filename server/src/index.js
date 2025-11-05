@@ -15,7 +15,7 @@ app.use('/api/bugs', bugsRouter);
 
 
 app.get('/', (req, res) => {
-res.send('Bug Tracker API is running');
+res.send('Bug Tracker API is running!');
 });
 
 // error handling middleware
