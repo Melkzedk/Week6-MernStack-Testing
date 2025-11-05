@@ -18,7 +18,7 @@ export default function BugForm({ onCreate }) {
       return;
     }
     try {
-      console.log('Submitting bug...:', { title, description });
+      console.log('Submitting bug:', { title, description });
       await onCreate({ title, description });
       setTitle('');
       setDescription('');
