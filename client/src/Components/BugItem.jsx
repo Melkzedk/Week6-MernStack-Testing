@@ -23,7 +23,7 @@ export default function BugItem({ bug, onUpdate, onDelete }) {
           className={`btn btn-sm ${bug.status === 'resolved' ? 'btn-secondary' : 'btn-success'}`}
           onClick={toggleResolved}
         >
-          {bug.status === 'resolved' ? 'Reopen' : 'Mark Resolved' : 'Pending'}
+          {bug.status === 'resolved' ? 'Reopen' : 'Mark Resolved' }
         </button>
         <button
           className="btn btn-sm btn-outline-danger"
