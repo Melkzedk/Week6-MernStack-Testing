@@ -14,7 +14,7 @@ export default function BugForm({ onCreate }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) {
-      setError('Please Title is required');
+      setError('Please title is required');
       return;
     }
     try {
