@@ -34,7 +34,7 @@ export default function BugForm({ onCreate }) {
       <h5 className="mb-3">Report a New Bug</h5>
 
       <div className="mb-3">
-        <label className="form-label">Title</label>
+        <label className="form-label">TITLE</label>
         <input
           type="text"
           className="form-control"
